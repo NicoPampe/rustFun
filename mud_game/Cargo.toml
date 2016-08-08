@@ -1,0 +1,6 @@
+[package]
+name = "mud_game"
+version = "0.1.0"
+authors = ["Nico Pampe <npampe@mines.edu>"]
+
+[dependencies]
