@@ -32,14 +32,5 @@ fn main() {
             },
             _ => println!("nothing was entered {}", user_input),
         }
-
-            // let mut input = String::new();
-
-        // io::stdin().read_line(&mut input).expect("Failed to read line");
-
-        // match input.as_str() {
-        //     "test" => println!("That was test"),
-        //     _ => println!("Got some other input")
-        // }
     }
 }
