@@ -1,0 +1,6 @@
+[package]
+name = "dnd_playersheets"
+version = "0.1.0"
+authors = ["Nico Pampe <npampe@mines.edu>"]
+
+[dependencies]
