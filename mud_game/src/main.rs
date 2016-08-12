@@ -1,22 +1,45 @@
-// extern crate rand;
+pub mod hero;
+pub mod character;
 
-// use std::io;	
-// use std::cmp::Ordering;
-// use rand::Rng;
+use hero::Hero;
+use character::Character;
 
-struct Hero {
-	name: String,
-	age: i32,
-}
+use std::io;
+use std::string::String;
+use std::convert::AsRef;
 
-trait Charater {
-	// fn new(name: &'static)
-	// http://rustbyexample.com/trait.html
-}
 
 fn main() {
     println!("Hello, world!");
 
-    let mut player = Hero { name: "Nico".to_string(), age: 21 };
-    println!("({}, {})", player.name, player.age);
+    let x_test: i32 = 5;
+
+    let mut kurt: Hero = Character::new("Kurt", x_test);
+
+    kurt.talk();
+
+    loop {
+        let mut user_input = String::new();
+
+        io::stdin().read_line(&mut user_input)
+            .expect("Failed to read line");
+
+        let user_input = user_input.trim();
+
+        match user_input.parse::<i32>() {
+            Ok(i) => kurt.x = i,
+            Err(..) => println!("nope"),
+        };
+
+        kurt.talk();
+
+        match user_input.as_ref() {
+            "list" => println!("It's a list"),
+            "exit" => {
+                println!("Done!");
+                break;
+            },
+            _ => {},
+        }
+    }
 }
